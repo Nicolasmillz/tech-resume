@@ -1,0 +1,74 @@
+/* Used to place background image */
+body {
+    background-image: url("../img/1963sfbay.jpeg");
+    background-color: #cccccc;
+   }
+
+/* Used to create colored text-box to read content easier over background */
+.text-box {
+    background-color:rgba(99, 107, 24, 0.966);
+    border:rgb(0, 0, 0) 40px;
+    padding: 10px;
+    box-shadow: 5px #494949;
+    border-radius: 20px/20px;
+    width: fit-content; width:-webkit-fit-content; width:-moz-fit-content !important; 
+    
+}
+
+/* Used to change font and font color for header text */
+h1 {
+    font-family: 'Oswald', sans-serif;
+}
+
+/* Used to change font and font color for standard text */
+p {
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;;
+    color: #343a40 !important;
+}
+
+/* Change color of stylized words in headers */
+.text-primary {
+    color: #96361f !important;
+  }
+
+/* Used to change color of smaller heading text */
+body {
+    padding-top: 3.375rem;
+    color: #343a40;
+  }
+
+/* Used to change the color of the navbar */
+.bg-primary {
+    background-color: rgba(99, 107, 24, 0.966) !important;
+  }
+
+/* Used to modify profile image--was too bright and messed with color scheme */
+img {
+    -webkit-filter: grayscale(25%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(25%);
+  }
+
+/* Used to change colors of the links and link highlights */
+
+a {
+    color: #bdbdbd;
+    text-decoration: none;
+    background-color: transparent;
+  }
+  a:hover {
+    color: #bd8070;
+    text-decoration: underline;
+  }
+
+/* Used to change hover color for social media link icons */
+  .social-icons .social-icon:hover {
+    background-color: #bd8070;
+  }
+
+/* Used to add a font-color for secondary headings not in 'H' tags */
+.text-secondary {
+    color: #bdbdbd  !important;
+    font-weight: bold;
+
+}

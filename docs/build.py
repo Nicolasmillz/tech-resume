@@ -37,7 +37,10 @@ def build_list(pages):
         "output": file_name,
         })
 
-def build_pages_2(pages):        
+    #template.render(pages=pages, content=content_html)
+
+
+def build_pages(pages):        
     from jinja2 import Template
     for page in pages:
         content_html = open(page['filename']).read()
@@ -47,6 +50,12 @@ def build_pages_2(pages):
             title=page['title'],
             content=content_html,
         )
+    template = Template('''
+    {% for page in pages %}
+    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{ page.output }}">{{ page.title }}</a></li>
+    {% endfor %}
+    ''')
+    template.render(pages=pages, content=content_html)
 
 #The main function contains a loop that runs the two functions for each page, with the
 # result of updating each webpage.
@@ -54,7 +63,7 @@ def build_pages_2(pages):
 def main():
     pages = []
     build_list(pages)
-    build_pages_2(pages)
+    build_pages(pages)
     #for page in pages:
     #    page_filename, page_output, page_title = open_pages(page)
     #    update_pages(page_filename, page_output, page_title)

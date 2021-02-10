@@ -19,36 +19,33 @@ def update_pages(page_filename, page_output, page_title):
     open(page_output, 'w+').write(finished_index_page)
 
 
-#The 'pages' list contains dictionaries with keys/links for each page.
+# This function uses glob and os modules to find all files within the content folder and make
+# a list of them that will be used to create final web pages. 
 
-pages = [
-    { 
-        'filename': '../content/index.html',
-        'output': './index.html',
-        'title': 'NWM - Index',
-    },
-    {
-        'filename': '../content/education.html',
-        'output': './education.html',
-        'title': 'NWM - Education',
-    },
-    {
-        'filename': '../content/interests.html',
-        'output': './interests.html',
-        'title': 'NWM - Interests',
-    },
-    {
-        'filename': '../content/skills.html',
-        'output': './skills.html',
-        'title': 'NWM - Skills',
-    },
-    ]
-    
+
+def build_pages_list(pages):
+    import glob
+    import os
+    all_html_files = glob.glob("../content/*.html")
+
+    for file in all_html_files:
+        file_name = os.path.basename(file)
+        name_only, extension = os.path.splitext(file_name)
+        pages.append({
+        "filename": file,
+        "title": 'NWM - ' + name_only.capitalize(),
+        "output": file_name,
+        })
+        
+
+
 
 #The main function contains a loop that runs the two functions for each page, with the
 # result of updating each webpage.
 
 def main():
+    pages = []
+    build_pages_list(pages)
     for page in pages:
         page_filename, page_output, page_title = open_pages(page)
         update_pages(page_filename, page_output, page_title)

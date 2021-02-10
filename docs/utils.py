@@ -40,7 +40,7 @@ def build_index():
     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{ page.output }}">{{ page.title }}</a></li>
     {% endfor %}
     ''')
-    index_template.render(pages=pages, content=content_html)
+    index_template.render(navbar)
 
 #This function creates a plain template for a new content page.
 

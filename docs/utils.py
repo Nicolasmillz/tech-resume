@@ -1,24 +1,3 @@
-#The 'open_pages' function pulls in the links from the 'pages' list.
-
-def open_pages(page):
-
-        page_filename = page['filename']
-        page_output = page['output']
-        page_title = page['title']
-        return page_filename, page_output, page_title 
-
-
-#The 'update_pages' function uses the returned variables from the 'open_pages' function
-# to add the contents to a template and write that content to the final webpage files.
-
-def update_pages(page_filename, page_output, page_title):
-    template = open('../templates/base.html').read()
-    fragment_content = open(page_filename).read()
-    finished_index_page = template.replace("{{content}}", fragment_content)
-    finished_index_page = finished_index_page.replace("{{title}}", page_title)
-    open(page_output, 'w+').write(finished_index_page)
-
-
 # This function uses glob and os modules to find all files within the content folder and make
 # a list of them that will be used to create final web pages. 
 
@@ -37,6 +16,8 @@ def build_list(pages):
         "output": file_name,
         })
 
+#This function uses jinja2 to loop through the pages list created from the 'build_list' function and render
+# the results to the web pages. It also creates a loop to update the index.
 
 def build_pages(pages):        
     from jinja2 import Template
@@ -62,9 +43,3 @@ def main():
     pages = []
     build_list(pages)
     build_pages(pages)
-    #for page in pages:
-    #    page_filename, page_output, page_title = open_pages(page)
-    #    update_pages(page_filename, page_output, page_title)
-
-
-main()

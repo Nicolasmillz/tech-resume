@@ -23,7 +23,7 @@ def update_pages(page_filename, page_output, page_title):
 # a list of them that will be used to create final web pages. 
 
 
-def build_pages_list(pages):
+def build_list(pages):
     import glob
     import os
     all_html_files = glob.glob("../content/*.html")
@@ -36,19 +36,28 @@ def build_pages_list(pages):
         "title": 'NWM - ' + name_only.capitalize(),
         "output": file_name,
         })
-        
 
-
+def build_pages_2(pages):        
+    from jinja2 import Template
+    for page in pages:
+        content_html = open(page['filename']).read()
+        template_html = open("../templates/base.html").read()
+        template = Template(template_html)
+        template.render(
+            title=page['title'],
+            content=content_html,
+        )
 
 #The main function contains a loop that runs the two functions for each page, with the
 # result of updating each webpage.
 
 def main():
     pages = []
-    build_pages_list(pages)
-    for page in pages:
-        page_filename, page_output, page_title = open_pages(page)
-        update_pages(page_filename, page_output, page_title)
+    build_list(pages)
+    build_pages_2(pages)
+    #for page in pages:
+    #    page_filename, page_output, page_title = open_pages(page)
+    #    update_pages(page_filename, page_output, page_title)
 
 
 main()

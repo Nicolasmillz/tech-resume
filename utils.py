@@ -15,6 +15,7 @@ def build_list(pages):
         name_only, extension = os.path.splitext(file_name)
         pages.append({
         "filename": file,
+        'nav_filename': file_name,
         "title": 'NWM - ' + name_only.capitalize(),
         "nav_title": name_only.capitalize(),
         "output": "./docs/" + file_name,
@@ -29,19 +30,19 @@ def build_page(pages):
         template_html = open("./templates/base.html").read()
         template = Template(template_html)
         
-        index_template = Template('''          
+        index_template_string = '''          
         {% for page in pages %}
-        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{ page.output }}">{{ page.nav_title }}</a></li>
+        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{ page.nav_filename }}">{{ page.nav_title }}</a></li>
         {% endfor %}
-        ''')
-
-        updated_page = index_template.render()
+        '''
+        index_template = Template(index_template_string)
+        index_template_string = index_template.render({'pages': pages})
         
         updated_page = template.render(
             title=page['title'],
             content=content_html,
+            navbar = index_template_string,
         )
-
         open(page['output'], 'w+').write(updated_page)
 
 

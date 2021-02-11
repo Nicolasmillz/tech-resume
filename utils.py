@@ -8,7 +8,7 @@ from jinja2 import Template
 
 def build_list(pages):
     
-    all_html_files = glob.glob("../content/*.html")
+    all_html_files = glob.glob("./content/*.html")
 
     for file in all_html_files:
         file_name = os.path.basename(file)
@@ -17,7 +17,7 @@ def build_list(pages):
         "filename": file,
         "title": 'NWM - ' + name_only.capitalize(),
         "nav_title": name_only.capitalize(),
-        "output": file_name,
+        "output": "./docs/" + file_name,
         })
 
 #This function uses jinja2 to loop through the pages list created from the 'build_list' function and render
@@ -26,19 +26,20 @@ def build_list(pages):
 def build_page(pages):
     for page in pages:
         content_html = open(page['filename']).read()
-        template_html = open("../templates/base.html").read()
+        template_html = open("./templates/base.html").read()
         template = Template(template_html)
         
-        index_template = Template('''
+        index_template = Template('''          
         {% for page in pages %}
         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{ page.output }}">{{ page.nav_title }}</a></li>
         {% endfor %}
         ''')
+
+        updated_page = index_template.render()
         
         updated_page = template.render(
             title=page['title'],
             content=content_html,
-            navbar=index_template,
         )
 
         open(page['output'], 'w+').write(updated_page)

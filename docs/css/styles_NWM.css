@@ -23,8 +23,8 @@ h1 {
 /* Used to change font and font color for standard text */
 p {
     font-weight: 500;
-    font-family: 'Passion One' !important;
-    color: #5c6268 !important;
+    font-family: 'Passion One', cursive !important;
+    color: #060607 !important;
 }
 
 /* Change color of stylized words in headers */

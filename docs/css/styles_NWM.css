@@ -23,7 +23,7 @@ h1 {
 /* Used to change font and font color for standard text */
 p {
     font-weight: 500;
-    font-family: 'Oswald';
+    font-family: 'Playfair Display', serif;
     color: #343a40 !important;
 }
 

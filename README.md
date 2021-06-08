@@ -1,1 +1,1 @@
-Thank you for checking out my <a href='https://nicolasmillz.github.io/tech-resume/'>resume site</a>!
+Thank you for checking out my <a href='https://nicolasmillz.github.io/tech-resume/' target='_blank'>resume site</a>!

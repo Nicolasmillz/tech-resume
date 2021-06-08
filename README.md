@@ -1,3 +1,1 @@
-# hw4
-
-Run in terminal with 'build' command to refresh web pages or run in terminal with 'new' command to create new content file.
+Thank you for checking out my <a href='https://nicolasmillz.github.io/tech-resume/'>resume site</a>!

@@ -6,7 +6,7 @@ body {
 
 /* Used to create colored text-box to read content easier over background */
 .text-box {
-    background-color:rgba(99, 107, 24, 0.966);
+    background-color:rgba(117, 128, 26, 0.966);
     border:rgb(0, 0, 0) 40px;
     padding: 10px;
     box-shadow: 5px #494949;
@@ -22,8 +22,7 @@ h1 {
 
 /* Used to change font and font color for standard text */
 p {
-    font-weight: 600;
-    font-family:  'Oswald', sans-serif;
+    font-family: 'PT Serif', serif;
     color:  #343a40 !important;
 }
 
@@ -40,7 +39,7 @@ body {
 
 /* Used to change the color of the navbar */
 .bg-primary {
-    background-color: rgba(99, 107, 24, 0.966) !important;
+  background-color:rgba(117, 128, 26, 0.966) !important;
   }
 
 /* Used to modify profile image--was too bright and messed with color scheme */
@@ -52,18 +51,18 @@ img {
 /* Used to change colors of the links and link highlights */
 
 a {
-    color: #bdbdbd;
+    color: rgba(255, 255, 255, 0.5);
     text-decoration: none;
     background-color: transparent;
   }
   a:hover {
-    color: #bd8070;
+    color: #96361f;
     text-decoration: underline;
   }
 
 /* Used to change hover color for social media link icons */
   .social-icons .social-icon:hover {
-    background-color: #bd8070;
+    background-color: #96361f;
   }
 
 /* Used to add a font-color for secondary headings not in 'H' tags */

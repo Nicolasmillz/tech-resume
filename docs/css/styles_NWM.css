@@ -64,10 +64,3 @@ a {
   .social-icons .social-icon:hover {
     background-color: #96361f;
   }
-
-/* Used to add a font-color for secondary headings not in 'H' tags */
-.text-secondary {
-    color: #bdbdbd  !important;
-    font-weight: bold;
-
-}

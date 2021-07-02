@@ -8,11 +8,10 @@ body {
 .text-box {
     background-color:rgba(117, 128, 26, 0.966);
     border:rgb(0, 0, 0) 40px;
-    padding: 10px;
-    box-shadow: 5px #494949;
-    border-radius: 20px/20px;
-    width: fit-content; width:-webkit-fit-content; width:-moz-fit-content !important; 
-    
+    padding: 1vw 4vw;
+    box-shadow: 20px #494949;
+    border-radius: 50px/50px;
+    width: fit-content; width:-webkit-fit-content; width:-moz-fit-content !important;   
 }
 
 /* Used to change font and font color for header text */
@@ -23,7 +22,16 @@ h1 {
 /* Used to change font and font color for standard text */
 p {
     font-family: 'PT Serif', serif;
+    font-size: large;
     color:  #343a40 !important;
+}
+
+.font-pt-serif {
+  font-family: 'PT Serif', serif;
+}
+
+ul {
+    font-size: large;
 }
 
 /* Change color of stylized words in headers */
